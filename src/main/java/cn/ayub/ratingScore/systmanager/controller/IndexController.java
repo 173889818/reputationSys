@@ -89,10 +89,10 @@ public class IndexController extends BaseController {
        if (!dreamCaptcha.validate(request, response, captcha)) {
             throw new RuntimeException("验证码错误");
         }*/
-        Subject user = SecurityUtils.getSubject();
         UsernamePasswordToken token = new UsernamePasswordToken(userAccount, userPassword);
         // 设置记住密码
         token.setRememberMe(1 == rememberMe);
+        Subject user = SecurityUtils.getSubject();
         try {
             user.login(token);
             return renderSuccess();
