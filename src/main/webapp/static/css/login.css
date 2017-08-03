@@ -1,0 +1,104 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    background-color:lavender;
+    overflow-x: auto;
+    -ms-overflow-x: auto;
+}
+#login_frame{
+    height: 420px;
+    margin: 10%;
+    min-height: 400px;
+    min-width: 1020px;
+    border: 1px dashed #000;
+    border-radius: 25px;
+}
+/*左侧嵌套图标*/
+#img_left{
+    width: 500px;
+    height: 380px;
+    float: left;
+    margin-right: 60px;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+#img_left img{
+    width:100%;
+    height:100%;
+    background-size: cover;
+}
+#login_content{
+    float: left;
+    background-color: aliceblue;
+    border-radius: 23px;
+    width: 400px;
+    height: 380px;
+    margin-right: 30px;
+    margin-top: 20px;
+}
+.login_info{
+    height: 30px;
+    width: 300px;
+    font-family: "Arial Narrow";
+    font-size: 16px;
+    margin-left: 20px;
+}
+.login_auth{
+    margin-top: 8px;
+}
+.login_lable{
+    padding-left: 20px;
+}
+#lable_login{
+    padding-top: 20px;
+    font-size: 20px;
+    padding-left: 20px;
+}
+.captcha{
+    margin-top: 10px;
+    font-size: 16px;
+    height: 29px;
+    width: 120px;
+}
+#remberPassword{
+    padding-top: 12px;
+}
+p label{
+    font-size: 13px;
+}
+#submitBtn{
+    vertical-align: middle;
+    padding-left: 10px;
+}
+#login_submit{
+    height: 40px;
+    width: 300px;
+    font-family: "Arial Narrow";
+    font-weight: 600;
+    font-size: 18px;
+    margin: 20px 15px;
+    background-color: red;
+    border-radius: 12px;
+    cursor: pointer;
+}
+input::-webkit-input-placeholder{
+    color:darkgray;
+    font-size: 13px;
+}
+input::-moz-placeholder{
+    /* Mozilla Firefox 19+ */
+    color: darkgray;
+    font-size: 13px;
+}
+input:-moz-placeholder{
+    /* Mozilla Firefox 4 to 18 */
+    color:darkgray;
+    font-size: 13px;
+}
+input:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: darkgray;
+    font-size: 13px;
+}

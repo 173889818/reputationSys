@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.ayub.ratingScore.systmanager.mapper.SysLogMapper">
+
+    <resultMap id="resultSysLogMap" type="cn.ayub.ratingScore.systmanager.mapper.SysLogMapper">
+        <id  column="id" property="id" jdbcType="TINYINT"/>
+        <result column="login_name" property="loginName" jdbcType="VARCHAR"></result>
+        <result column="role_name" property="roleName" jdbcType="VARCHAR"></result>
+        <result column="opt_content" property="optContent" jdbcType="VARCHAR"></result>
+        <result column="client_ip" property="clientIp" jdbcType="VARCHAR"></result>
+        <result column="create_time" property="createTime" jdbcType="DATE"></result>
+    </resultMap>
+    <sql id="BASE_COUMN_SQL">
+        a.id AS id,a.login_name AS loginName,a.opt_content AS optContent,a.role_name AS roleName,a.client_ip AS clientIp,a.create_time AS createTime
+    </sql>
+    <select id="getSysLog" parameterType="long" resultOrdered="true" resultMap="resultSysLogMap">
+      SELECT
+        <include refid="BASE_COUMN_SQL"/>
+      FROM sys_log a WHERE
+        1=1 AND a.id=#{id}
+    </select>
+    <select id="getAllSysLog" resultMap="resultSysLogMap" >
+        SELECT
+        <include refid="BASE_COUMN_SQL"/>
+        FROM sys_log a WHERE
+        1=1
+    </select>
+<insert id="insertSysLog" useGeneratedKeys="true" parameterType="cn.ayub.ratingScore.systmanager.mapper.SysLogMapper">
+    INSERT INTO sys_log
+    (login_name,role_name,opt_content,client_ip,create_time)
+    VALUES
+    (#{loginName,jdbcType=VARCHAR},#{roleName,jdbcType=VARCHAR},#{optContent,jdbcType=VARCHAR},#{clientIp,jdbcType=VARCHAR},NOW())
+</insert>
+    <update id="updateSysLog">
+        UPDATE sys_log a SET
+        <trim suffixOverrides=",">
+            <if test="loginName!=null and loginName!=''">
+                a.login_name=#{loginName}
+            </if>
+            <if test="clientIp!=null and clientIp!=''">
+                a.client_ip=#{clientIp}
+            </if>
+            <if test="optContent!=null and optContent!=''">
+                a.opt_content=#{optContent}
+            </if>
+            <if test="roleName!=null and roleName!=''">
+                a.role_name=#{roleName}
+            </if>
+        </trim>
+    </update>
+</mapper>
