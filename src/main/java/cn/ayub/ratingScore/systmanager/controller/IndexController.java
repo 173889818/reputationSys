@@ -90,10 +90,10 @@ public class IndexController extends BaseController {
             throw new RuntimeException("验证码错误");
         }*/
         Subject user = SecurityUtils.getSubject();
-        UsernamePasswordToken token = new UsernamePasswordToken(userAccount, userPassword);
-        // 设置记住密码
-        token.setRememberMe(1 == rememberMe);
         try {
+            UsernamePasswordToken token = new UsernamePasswordToken(userAccount, userPassword);
+            // 设置记住密码
+            token.setRememberMe(1 == rememberMe);
             user.login(token);
             return renderSuccess();
         } catch (UnknownAccountException e) {
