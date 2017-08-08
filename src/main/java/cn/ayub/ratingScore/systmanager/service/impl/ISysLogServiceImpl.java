@@ -4,6 +4,7 @@ import cn.ayub.ratingScore.systmanager.mapper.SysLogMapper;
 import cn.ayub.ratingScore.systmanager.model.SysLog;
 import cn.ayub.ratingScore.systmanager.service.ISysLogService;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import org.springframework.stereotype.Service;
 
 import java.io.Serializable;
 
