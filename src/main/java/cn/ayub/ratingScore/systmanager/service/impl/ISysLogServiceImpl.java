@@ -10,5 +10,6 @@ import java.io.Serializable;
 /**
  * Created by dingcc on 2017/8/1.
  */
+ @Service
 public class ISysLogServiceImpl extends ServiceImpl<SysLogMapper, SysLog> implements ISysLogService,Serializable {
 }
