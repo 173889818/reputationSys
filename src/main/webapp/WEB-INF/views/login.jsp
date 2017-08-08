@@ -16,7 +16,7 @@
     <div id="login_frame">
         <%--左侧图片等内容--%>
         <div id="img_left">
-            <img id="left_imges" src="">
+            <img id="left_imges" src="${ctx}/static/style/images/20170725165512.png">
         </div>
         <%--右侧登录内容--%>
             <div id="login_content">
@@ -234,7 +234,7 @@
 
     function setUrl(){
         var img = new Image();
-        img.src = "${ctx}/static/style/images/20170725165512.png?"+Math.random();;
+        img.src = "${ctx}/static/style/images/20170725165512.png";
         var imgUrl=getBase64Image(img);
         img.onload=function () {
             $("#left_imges").attr("src",imgUrl);
